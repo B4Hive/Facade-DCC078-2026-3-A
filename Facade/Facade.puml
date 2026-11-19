@@ -1,0 +1,21 @@
+@startuml Facade
+
+title Façade Pattern 'FrontController'
+hide members
+left to right direction
+
+class CheckoutController
+class CheckoutFacade
+class ServicoDeEstoque
+class GatewayPagamento
+class GeradorNotaFiscal
+class ServicoNotificacao
+
+CheckoutController --> CheckoutFacade : chama
+
+CheckoutFacade --> ServicoDeEstoque : coordena
+CheckoutFacade --> GatewayPagamento : coordena
+CheckoutFacade --> GeradorNotaFiscal : coordena
+CheckoutFacade --> ServicoNotificacao : coordena
+
+@enduml
